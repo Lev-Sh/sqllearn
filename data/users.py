@@ -17,5 +17,5 @@ class User(SqlAlchemyBase):
     speciality = sa.Column(sa.String, nullable=True)
     address = sa.Column(sa.String, nullable=True)
     email = sa.Column(sa.String, index=True, unique=True)
-    hashed_password = sa.Column(sa.String, nullable=True)
+    hashed_password = sa.Column(sa.String, nullable=True, default='1234')
     modified_date = sa.Column(sa.DateTime, default=datetime.datetime.now())
