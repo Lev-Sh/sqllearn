@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="text-center">Works ss</h1>
+    {% for work in works %}
+        <div>
+            <h3>Action # {{ work.id }}</h3>
+        </div>
+        <table class="table">
+            <tr class="table-secondary">
+                <th>Table of activity</th>
+                <th>Team leader</th>
+                <th>Duration</th>
+                <th>List of collaborators</th>
+                <th>Is finished</th>
+            </tr>
+            <tr class="table-primary">
+                <th>{{ work.job }}</th>
+                <th>{{ work.team_leader }}</th>
+                <th>{{ work.work_size }}</th>
+                <th>{{ work.collaborators }}</th>
+                <th>{{ work.is_finished }}</th>
+            </tr>
+        </table>
+
+    {% endfor %}
+
+{% endblock %}

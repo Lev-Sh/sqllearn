@@ -19,3 +19,10 @@ class User(SqlAlchemyBase):
     email = sa.Column(sa.String, index=True, unique=True)
     hashed_password = sa.Column(sa.String, nullable=True, default='1234')
     modified_date = sa.Column(sa.DateTime, default=datetime.datetime.now())
+
+    @property
+    def get_fullname(self):
+        return f"{self.name} {self.surname}"
+
+    def __repr__(self):
+        return f'<Colonist> {self.id} {self.surname} {self.name}'
